@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn HTML5 fundamentals, semantic elements, forms, and practical web page structure.">
+  <title>HTML5 | Kyalo's Developer Portfolio</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .lesson { max-width: 900px; margin: auto; }
+    .lesson h1 { font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 16px; }
+    .lesson h2 { margin: 42px 0 14px; font-size: 1.7rem; }
+    .lesson p, .lesson li { color: var(--muted); margin-bottom: 12px; }
+    .lesson ul { padding-left: 24px; }
+    .lesson code { color: var(--primary); }
+    .code-example {
+      overflow-x: auto; padding: 22px; margin: 20px 0;
+      border: 1px solid var(--border); border-radius: 12px;
+      background: #060a14; color: #e7edf8;
+      font: 0.92rem/1.8 Consolas, monospace;
+      white-space: pre;
+    }
+    .lesson-nav { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 40px; }
+    .lesson-nav a { color: var(--primary); }
+    .back-link { display: inline-block; margin-bottom: 35px; color: var(--primary); }
+    .lesson-note {
+      padding: 18px; margin-top: 20px;
+      background: var(--surface); border-left: 3px solid var(--primary);
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="../index.html">KYALO<span>.</span></a>
+    <a class="button button-secondary" href="../index.html">Back to Portfolio</a>
+  </header>
+
+  <main class="section lesson">
+    <a class="back-link" href="../index.html#skills">&larr; Back to all skills</a>
+
+    <p class="eyebrow">WEB DEVELOPMENT FUNDAMENTALS</p>
+    <h1>Learn <span>HTML5</span></h1>
+
+    <p>
+      HTML (HyperText Markup Language) defines the structure and meaning
+      of content on a web page. It tells a browser which content is a
+      heading, paragraph, image, link, form, or other element.
+    </p>
+
+    <div class="lesson-note">
+      <strong>Think of a website as a building:</strong>
+      HTML provides its structure, CSS handles its appearance, and
+      JavaScript adds interactive behavior.
+    </div>
+
+    <h2>1. Where is HTML used?</h2>
+    <ul>
+      <li>Personal websites and portfolios.</li>
+      <li>School portals and education platforms such as TMH.</li>
+      <li>Online stores, dashboards and web applications.</li>
+      <li>Forms used for registration, search and data entry.</li>
+    </ul>
+
+    <h2>2. A basic HTML document</h2>
+    <p>
+      This example creates a small web page containing a heading,
+      a paragraph and a link.
+    </p>
+
+    <pre class="code-example"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport"
+        content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;My First Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Welcome to My Website&lt;/h1&gt;
+  &lt;p&gt;I am learning HTML5.&lt;/p&gt;
+  &lt;a href="https://example.com"&gt;Visit Example&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+    <h2>3. Important HTML elements</h2>
+    <ul>
+      <li><code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>: headings.</li>
+      <li><code>&lt;p&gt;</code>: paragraphs.</li>
+      <li><code>&lt;a&gt;</code>: links to pages and resources.</li>
+      <li><code>&lt;img&gt;</code>: images, with meaningful alternative text.</li>
+      <li><code>&lt;ul&gt;</code> and <code>&lt;li&gt;</code>: lists.</li>
+      <li><code>&lt;form&gt;</code> and <code>&lt;input&gt;</code>: user input.</li>
+      <li><code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>,
+          <code>&lt;main&gt;</code> and <code>&lt;footer&gt;</code>:
+          semantic page structure.</li>
+    </ul>
+
+    <h2>4. A practical example</h2>
+    <p>
+      A school portal might use HTML to display a student's report card.
+      Headings identify the student and term, tables organize subject
+      marks, and links provide access to other portal pages.
+    </p>
+
+    <pre class="code-example"><code>&lt;section aria-labelledby="results-title"&gt;
+  &lt;h2 id="results-title"&gt;Term Results&lt;/h2&gt;
+  &lt;p&gt;Student: Example Student&lt;/p&gt;
+
+  &lt;table&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th scope="col"&gt;Subject&lt;/th&gt;
+        &lt;th scope="col"&gt;Marks&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Mathematics&lt;/td&gt;
+        &lt;td&gt;85&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/section&gt;</code></pre>
+
+    <p class="lesson-note">
+      This is a static HTML example. In a real TMH application, Django
+      would retrieve authorized student results from the database and
+      render them into the page.
+    </p>
+
+    <h2>5. What should you practise?</h2>
+    <ul>
+      <li>Create a page with a title, heading and three paragraphs.</li>
+      <li>Add links to two other pages.</li>
+      <li>Create a table with three subjects and their marks.</li>
+      <li>Use semantic elements to organize the page.</li>
+    </ul>
+
+    <nav class="lesson-nav" aria-label="Related skills">
+      <a href="css3.html">Next: CSS3 &rarr;</a>
+      <a href="javascript.html">JavaScript</a>
+      <a href="python.html">Python</a>
+      <a href="django.html">Django</a>
+      <a href="postgresql.html">PostgreSQL</a>
+    </nav>
+
+    <p style="margin-top: 40px;">
+      <a class="button button-primary" href="../index.html">Back to Portfolio</a>
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Kyalo.</p>
+    <a href="../index.html#skills">All skills</a>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
