@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn PostgreSQL databases, SQL queries, relationships, constraints, and transactions.">
+  <title>PostgreSQL | Kyalo's Developer Portfolio</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .lesson { max-width: 900px; margin: auto; }
+    .lesson h1 { font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 16px; }
+    .lesson h2 { margin: 42px 0 14px; font-size: 1.7rem; }
+    .lesson p, .lesson li { color: var(--muted); margin-bottom: 12px; }
+    .lesson ul { padding-left: 24px; }
+    .lesson code { color: var(--primary); }
+    .code-example {
+      overflow-x: auto; padding: 22px; margin: 20px 0;
+      border: 1px solid var(--border); border-radius: 12px;
+      background: #060a14; color: #e7edf8;
+      font: 0.92rem/1.8 Consolas, monospace;
+      white-space: pre;
+    }
+    .lesson-nav { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 40px; }
+    .lesson-nav a, .back-link { color: var(--primary); }
+    .back-link { display: inline-block; margin-bottom: 35px; }
+    .lesson-note {
+      padding: 18px; margin-top: 20px;
+      background: var(--surface); border-left: 3px solid var(--primary);
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="../index.html">KYALO<span>.</span></a>
+    <a class="button button-secondary" href="../index.html">Back to Portfolio</a>
+  </header>
+
+  <main class="section lesson">
+    <a class="back-link" href="../index.html#skills">&larr; Back to all skills</a>
+
+    <p class="eyebrow">DATABASES & DATA MANAGEMENT</p>
+    <h1>Learn <span>PostgreSQL</span></h1>
+
+    <p>
+      PostgreSQL is an open-source relational database management system.
+      It stores structured information in tables and supports SQL queries,
+      relationships, constraints, transactions and advanced data types.
+    </p>
+
+    <div class="lesson-note">
+      <strong>Why PostgreSQL matters to you:</strong> A platform such as
+      Top Mark Hub needs reliable storage for schools, users, enrollments,
+      subjects, marks and academic results.
+    </div>
+
+    <h2>1. Where is PostgreSQL used?</h2>
+    <ul>
+      <li>Education systems and student information platforms.</li>
+      <li>Banking, fintech and transaction-processing applications.</li>
+      <li>Business applications, reporting and analytics.</li>
+      <li>Web backends built with Django and other frameworks.</li>
+    </ul>
+
+    <h2>2. Understanding tables</h2>
+    <p>
+      A table contains rows and columns. Each row represents a record,
+      while each column describes an attribute of that record.
+    </p>
+
+    <pre class="code-example"><code>CREATE TABLE subjects (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    code VARCHAR(20) UNIQUE NOT NULL
+);</code></pre>
+
+    <p>
+      In this example, the primary key identifies each subject, while
+      the unique constraint prevents two subjects from sharing the same
+      code.
+    </p>
+
+    <h2>3. Insert and retrieve data</h2>
+    <p>
+      SQL statements allow you to add, retrieve, update and delete
+      records. These are basic examples using a sample table.
+    </p>
+
+    <pre class="code-example"><code>INSERT INTO subjects (name, code)
+VALUES ('Mathematics', 'MATH');
+
+SELECT id, name, code
+FROM subjects
+ORDER BY name;</code></pre>
+
+    <h2>4. Filter and summarize data</h2>
+    <p>
+      The WHERE clause filters records. Aggregate functions such as
+      AVG and COUNT summarize data.
+    </p>
+
+    <pre class="code-example"><code>SELECT
+    subject,
+    AVG(mark) AS average_mark,
+    COUNT(*) AS number_of_records
+FROM exam_results
+WHERE mark BETWEEN 0 AND 100
+GROUP BY subject
+ORDER BY average_mark DESC;</code></pre>
+
+    <p>
+      This query assumes that an <code>exam_results</code> table exists
+      with suitable <code>subject</code> and <code>mark</code> columns.
+      It calculates the average and number of records for each subject.
+    </p>
+
+    <h2>5. Relationships and foreign keys</h2>
+    <p>
+      Relational databases connect records through keys. A foreign key
+      ensures that a referenced record exists in the related table.
+    </p>
+
+    <pre class="code-example"><code>CREATE TABLE students (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    full_name VARCHAR(150) NOT NULL
+);
+
+CREATE TABLE exam_results (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    student_id BIGINT NOT NULL
+        REFERENCES students(id),
+    subject VARCHAR(100) NOT NULL,
+    mark NUMERIC(5, 2)
+        CHECK (mark BETWEEN 0 AND 100)
+);</code></pre>
+
+    <h2>6. Transactions</h2>
+    <p>
+      A transaction groups database operations so that they can be
+      committed together or rolled back if a problem occurs.
+    </p>
+
+    <pre class="code-example"><code>BEGIN;
+
+UPDATE accounts
+SET balance = balance - 500
+WHERE id = 1;
+
+UPDATE accounts
+SET balance = balance + 500
+WHERE id = 2;
+
+COMMIT;</code></pre>
+
+    <p>
+      This illustrates transaction syntax, not a complete money-transfer
+      implementation. Real financial systems also need validation,
+      sufficient-funds checks, concurrency controls and other safeguards.
+    </p>
+
+    <h2>7. PostgreSQL with Django</h2>
+    <p>
+      Django models describe application data, while PostgreSQL stores
+      the resulting records. Django's ORM allows many database operations
+      to be performed through Python.
+    </p>
+
+    <pre class="code-example"><code># Example Django ORM query
+from academic.models import Subject
+
+subjects = Subject.objects.order_by("name")
+
+for subject in subjects:
+    print(subject.name)</code></pre>
+
+    <div class="lesson-note">
+      <strong>Connection to TMH:</strong> PostgreSQL can store academic
+      records and support queries for report cards and performance analysis.
+      Access controls, data validation, backups and careful migrations
+      remain essential.
+    </div>
+
+    <h2>8. What should you practise?</h2>
+    <ul>
+      <li>Create a database and a table.</li>
+      <li>Insert sample records and retrieve them using SELECT.</li>
+      <li>Filter results using WHERE and sort them using ORDER BY.</li>
+      <li>Calculate averages using GROUP BY.</li>
+      <li>Create related tables using primary and foreign keys.</li>
+      <li>Connect a Django model to PostgreSQL and practise migrations.</li>
+    </ul>
+
+    <nav class="lesson-nav" aria-label="Related skills">
+      <a href="django.html">&larr; Previous: Django</a>
+      <a href="html5.html">HTML5</a>
+      <a href="css3.html">CSS3</a>
+      <a href="javascript.html">JavaScript</a>
+      <a href="python.html">Python</a>
+    </nav>
+
+    <p style="margin-top: 40px;">
+      <a class="button button-primary" href="../index.html">Back to Portfolio</a>
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Kyalo.</p>
+    <a href="../index.html#skills">All skills</a>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
