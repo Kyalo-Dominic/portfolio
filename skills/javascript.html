@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn JavaScript fundamentals, functions, events, and DOM manipulation with practical examples.">
+  <title>JavaScript | Kyalo's Developer Portfolio</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .lesson { max-width: 900px; margin: auto; }
+    .lesson h1 { font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 16px; }
+    .lesson h2 { margin: 42px 0 14px; font-size: 1.7rem; }
+    .lesson p, .lesson li { color: var(--muted); margin-bottom: 12px; }
+    .lesson ul { padding-left: 24px; }
+    .lesson code { color: var(--primary); }
+    .code-example {
+      overflow-x: auto; padding: 22px; margin: 20px 0;
+      border: 1px solid var(--border); border-radius: 12px;
+      background: #060a14; color: #e7edf8;
+      font: 0.92rem/1.8 Consolas, monospace;
+      white-space: pre;
+    }
+    .lesson-nav { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 40px; }
+    .lesson-nav a, .back-link { color: var(--primary); }
+    .back-link { display: inline-block; margin-bottom: 35px; }
+    .lesson-note {
+      padding: 18px; margin-top: 20px;
+      background: var(--surface); border-left: 3px solid var(--primary);
+      border-radius: 6px;
+    }
+    .demo-box {
+      margin: 20px 0; padding: 24px;
+      border: 1px solid var(--border); border-radius: 12px;
+      background: var(--surface);
+    }
+    .demo-button {
+      margin-top: 12px; padding: 10px 16px;
+      border: 0; border-radius: 8px;
+      background: var(--primary); color: #06150e;
+      font-weight: 700; cursor: pointer;
+    }
+    .demo-button:focus-visible {
+      outline: 2px solid white; outline-offset: 3px;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="../index.html">KYALO<span>.</span></a>
+    <a class="button button-secondary" href="../index.html">Back to Portfolio</a>
+  </header>
+
+  <main class="section lesson">
+    <a class="back-link" href="../index.html#skills">&larr; Back to all skills</a>
+
+    <p class="eyebrow">INTERACTIVE WEB DEVELOPMENT</p>
+    <h1>Learn <span>JavaScript</span></h1>
+
+    <p>
+      JavaScript is a programming language that allows web pages to
+      respond to user actions, update content, validate forms and
+      communicate with web services.
+    </p>
+
+    <div class="lesson-note">
+      HTML provides structure, CSS controls appearance, and JavaScript
+      adds behavior. The mobile menu on this portfolio uses JavaScript
+      to open and close the sidebar.
+    </div>
+
+    <h2>1. Where is JavaScript used?</h2>
+    <ul>
+      <li>Interactive menus, tabs, sliders and forms.</li>
+      <li>Live search and client-side input validation.</li>
+      <li>Dashboards that update when data changes.</li>
+      <li>Browser applications that communicate with APIs.</li>
+    </ul>
+
+    <h2>2. Variables and data</h2>
+    <p>
+      Use <code>const</code> for bindings that will not be reassigned
+      and <code>let</code> when reassignment is needed.
+    </p>
+
+    <pre class="code-example"><code>const studentName = "Amina";
+let marks = 72;
+
+marks = 85;
+
+console.log(studentName);
+console.log(marks);</code></pre>
+
+    <h2>3. Functions</h2>
+    <p>
+      Functions group reusable instructions. They can accept inputs
+      and return results.
+    </p>
+
+    <pre class="code-example"><code>function calculateAverage(total, subjects) {
+  if (subjects <= 0) {
+    return null;
+  }
+
+  return total / subjects;
+}
+
+const average = calculateAverage(360, 6);
+console.log(average); // 60</code></pre>
+
+    <h2>4. Responding to events</h2>
+    <p>
+      An event listener runs a function when something happens,
+      such as a button click.
+    </p>
+
+    <div class="demo-box">
+      <h3 id="demo-heading">Interactive demonstration</h3>
+      <p id="demo-message">Click the button to change this message.</p>
+      <button class="demo-button" id="demo-button" type="button">
+        Try JavaScript
+      </button>
+    </div>
+
+    <pre class="code-example"><code>const button = document.querySelector("#demo-button");
+const message = document.querySelector("#demo-message");
+
+button.addEventListener("click", () => {
+  message.textContent = "JavaScript responded to your click!";
+});</code></pre>
+
+    <h2>5. DOM manipulation</h2>
+    <p>
+      The Document Object Model (DOM) represents a page as objects
+      that JavaScript can select and modify.
+    </p>
+
+    <pre class="code-example"><code>const heading = document.querySelector("h1");
+
+heading.textContent = "Welcome to My Website";</code></pre>
+
+    <h2>6. A practical example</h2>
+    <p>
+      A school portal might use JavaScript to validate a form before
+      submission or update a marks total as a teacher enters scores.
+      Important validation and permissions must still be enforced by
+      the server, not JavaScript alone.
+    </p>
+
+    <pre class="code-example"><code>const scores = [75, 80, 90];
+
+const total = scores.reduce(
+  (sum, score) => sum + score,
+  0
+);
+
+const average = total / scores.length;
+
+console.log("Total:", total);
+console.log("Average:", average);</code></pre>
+
+    <div class="lesson-note">
+      <strong>Connection to TMH:</strong> JavaScript can improve the
+      user interface, while Django remains responsible for secure
+      server-side processing and database operations.
+    </div>
+
+    <h2>7. What should you practise?</h2>
+    <ul>
+      <li>Write a function that adds two numbers.</li>
+      <li>Make a button change a paragraph's text.</li>
+      <li>Calculate the average of a list of marks.</li>
+      <li>Use the browser developer console to inspect errors.</li>
+    </ul>
+
+    <nav class="lesson-nav" aria-label="Related skills">
+      <a href="css3.html">&larr; Previous: CSS3</a>
+      <a href="python.html">Next: Python &rarr;</a>
+      <a href="html5.html">HTML5</a>
+      <a href="django.html">Django</a>
+      <a href="postgresql.html">PostgreSQL</a>
+    </nav>
+
+    <p style="margin-top: 40px;">
+      <a class="button button-primary" href="../index.html">Back to Portfolio</a>
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Kyalo.</p>
+    <a href="../index.html#skills">All skills</a>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const demoButton = document.getElementById("demo-button");
+    const demoMessage = document.getElementById("demo-message");
+
+    demoButton.addEventListener("click", () => {
+      demoMessage.textContent =
+        "JavaScript responded to your click! It works.";
+    });
+  </script>
+</body>
+</html>
