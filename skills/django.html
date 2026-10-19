@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn Django, Python web development, models, views, templates and secure web applications.">
+  <title>Django | Kyalo's Developer Portfolio</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .lesson { max-width: 900px; margin: auto; }
+    .lesson h1 { font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 16px; }
+    .lesson h2 { margin: 42px 0 14px; font-size: 1.7rem; }
+    .lesson p, .lesson li { color: var(--muted); margin-bottom: 12px; }
+    .lesson ul { padding-left: 24px; }
+    .lesson code { color: var(--primary); }
+    .code-example {
+      overflow-x: auto; padding: 22px; margin: 20px 0;
+      border: 1px solid var(--border); border-radius: 12px;
+      background: #060a14; color: #e7edf8;
+      font: 0.92rem/1.8 Consolas, monospace;
+      white-space: pre;
+    }
+    .lesson-nav { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 40px; }
+    .lesson-nav a, .back-link { color: var(--primary); }
+    .back-link { display: inline-block; margin-bottom: 35px; }
+    .lesson-note {
+      padding: 18px; margin-top: 20px;
+      background: var(--surface); border-left: 3px solid var(--primary);
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="../index.html">KYALO<span>.</span></a>
+    <a class="button button-secondary" href="../index.html">Back to Portfolio</a>
+  </header>
+
+  <main class="section lesson">
+    <a class="back-link" href="../index.html#skills">&larr; Back to all skills</a>
+
+    <p class="eyebrow">PYTHON WEB DEVELOPMENT</p>
+    <h1>Learn <span>Django</span></h1>
+
+    <p>
+      Django is a high-level Python web framework for building database-driven
+      websites and web applications. It provides tools for URL routing,
+      database models, templates, forms, authentication and an administration
+      interface.
+    </p>
+
+    <div class="lesson-note">
+      <strong>Why Django matters to you:</strong> It is part of the technology
+      stack you are using to build Top Mark Hub, including its users, schools,
+      academic records and reporting features.
+    </div>
+
+    <h2>1. Where is Django used?</h2>
+    <ul>
+      <li>Education portals and school management systems.</li>
+      <li>Business dashboards and database-driven applications.</li>
+      <li>Authentication, forms and role-based user interfaces.</li>
+      <li>Websites that need maintainable Python backends.</li>
+    </ul>
+
+    <h2>2. The request-response cycle</h2>
+    <p>
+      A browser requests a URL. Django matches it to a URL pattern,
+      calls a view, and returns a response—often by rendering a template
+      with data retrieved from a database.
+    </p>
+
+    <pre class="code-example"><code>Browser request
+      |
+      v
+URL pattern
+      |
+      v
+View function
+      |
+      +----> Model / Database
+      |
+      v
+Template (when needed)
+      |
+      v
+HTTP response</code></pre>
+
+    <h2>3. A simple Django view</h2>
+    <p>
+      A view receives an HTTP request and returns an HTTP response.
+      For example, this view returns a short message.
+    </p>
+
+    <pre class="code-example"><code># views.py
+from django.http import HttpResponse
+
+def home(request):
+    return HttpResponse("Welcome to my Django application!")</code></pre>
+
+    <h2>4. Connect a URL to the view</h2>
+    <p>
+      URL patterns tell Django which view should handle a request.
+      In a project's URL configuration, you can connect the root URL
+      to the view above.
+    </p>
+
+    <pre class="code-example"><code># urls.py
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path("", views.home, name="home"),
+]</code></pre>
+
+    <h2>5. Models and databases</h2>
+    <p>
+      Django models describe the data your application stores. Django
+      can generate database tables through migrations when your models
+      change.
+    </p>
+
+    <pre class="code-example"><code># models.py — simplified example
+from django.db import models
+
+class Subject(models.Model):
+    name = models.CharField(max_length=100)
+    code = models.CharField(max_length=20, unique=True)
+
+    def __str__(self):
+        return self.name</code></pre>
+
+    <p>
+      After creating or changing models, developers normally run
+      <code>python manage.py makemigrations</code> and
+      <code>python manage.py migrate</code> to prepare and apply schema
+      changes.
+    </p>
+
+    <h2>6. Templates</h2>
+    <p>
+      Templates combine HTML with data supplied by a view. Django's
+      template language can display values and repeat elements.
+    </p>
+
+    <pre class="code-example"><code>&lt;h1&gt;Welcome, {{ student_name }}&lt;/h1&gt;
+
+&lt;ul&gt;
+  {% for subject in subjects %}
+    &lt;li&gt;{{ subject }}&lt;/li&gt;
+  {% empty %}
+    &lt;li&gt;No subjects available.&lt;/li&gt;
+  {% endfor %}
+&lt;/ul&gt;</code></pre>
+
+    <h2>7. Security essentials</h2>
+    <ul>
+      <li>Use Django's authentication and permission systems appropriately.</li>
+      <li>Validate inputs on the server and protect forms against CSRF.</li>
+      <li>Keep secret keys, database passwords and API credentials out of public repositories.</li>
+      <li>Restrict access to records according to the user's role and permissions.</li>
+      <li>Use HTTPS and secure deployment settings in production.</li>
+    </ul>
+
+    <div class="lesson-note">
+      <strong>Connection to TMH:</strong> Django can manage school and student
+      records, authenticate teachers and administrators, and generate report
+      cards. Each user's access must be checked on the server; hiding a button
+      in HTML is not sufficient security.
+    </div>
+
+    <h2>8. What should you practise?</h2>
+    <ul>
+      <li>Create a Django project and a simple application.</li>
+      <li>Build a view and connect it through a URL pattern.</li>
+      <li>Create a model and apply its migrations.</li>
+      <li>Render a template using data passed from a view.</li>
+      <li>Practise authentication and role-based permissions.</li>
+    </ul>
+
+    <nav class="lesson-nav" aria-label="Related skills">
+      <a href="python.html">&larr; Previous: Python</a>
+      <a href="postgresql.html">Next: PostgreSQL &rarr;</a>
+      <a href="html5.html">HTML5</a>
+      <a href="css3.html">CSS3</a>
+      <a href="javascript.html">JavaScript</a>
+    </nav>
+
+    <p style="margin-top: 40px;">
+      <a class="button button-primary" href="../index.html">Back to Portfolio</a>
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Kyalo.</p>
+    <a href="../index.html#skills">All skills</a>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
