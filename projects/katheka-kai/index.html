@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Katheka-Kai Senior School website project by Kyalo.">
+    <title>Katheka-Kai Senior School | Kyalo</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <style>
+        .project-hero {
+            padding: 100px 8% 60px;
+            text-align: center;
+        }
+        .project-hero h1 {
+            font-size: clamp(2.2rem, 5vw, 4rem);
+            margin-bottom: 18px;
+        }
+        .project-hero h1 span { color: #4CAF50; }
+        .project-content {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 20px 8% 90px;
+        }
+        .project-panel {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(76,175,80,0.25);
+            border-radius: 16px;
+            padding: 28px;
+            margin: 24px 0;
+        }
+        .project-content h2 {
+            margin-bottom: 14px;
+            color: #4CAF50;
+        }
+        .project-content p, .project-content li {
+            line-height: 1.8;
+        }
+        .project-content ul { padding-left: 24px; }
+        .project-status {
+            display: inline-block;
+            padding: 8px 14px;
+            border: 1px solid #4CAF50;
+            border-radius: 30px;
+            color: #8be29a;
+            margin: 10px 0 22px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #8be29a;
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <a href="../../index.html" class="logo">KYALO<span>.</span></a>
+    <nav class="desktop-nav">
+        <a href="../../index.html#about">About</a>
+        <a href="../../index.html#skills">Skills</a>
+        <a href="../../index.html#projects">Projects</a>
+        <a href="../../index.html#contact">Contact</a>
+    </nav>
+    <button class="menu-toggle" id="menu-toggle"
+            aria-label="Open navigation menu" aria-expanded="false">☰</button>
+</header>
+
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+<aside class="sidebar" id="sidebar">
+    <button class="sidebar-close" id="sidebar-close"
+            aria-label="Close navigation menu">×</button>
+    <a href="../../index.html">Home</a>
+    <a href="../../index.html#about">About</a>
+    <a href="../../index.html#skills">Skills</a>
+    <a href="../../index.html#projects">Projects</a>
+    <a href="../../index.html#contact">Contact</a>
+</aside>
+
+<main>
+    <section class="project-hero">
+        <h1>Katheka-Kai <span>Senior School</span></h1>
+        <p>A school website project focused on presenting school information online.</p>
+        <div class="project-status">Portfolio project</div>
+    </section>
+
+    <section class="project-content">
+        <div class="project-panel">
+            <h2>Project Overview</h2>
+            <p>
+                This project focuses on presenting Katheka-Kai Senior School
+                through a web-based platform. A school website can help students,
+                parents and other visitors access essential information in one place.
+            </p>
+        </div>
+
+        <div class="project-panel">
+            <h2>The Problem</h2>
+            <p>
+                School information can be difficult to find when it is scattered
+                across different channels. A well-organised website provides a
+                central online presence for communicating information to the school
+                community.
+            </p>
+        </div>
+
+        <div class="project-panel">
+            <h2>Project Objectives</h2>
+            <ul>
+                <li>Present the school's identity and general information.</li>
+                <li>Organise important information for students and parents.</li>
+                <li>Provide a clear, accessible website structure.</li>
+                <li>Support a consistent user experience across devices.</li>
+            </ul>
+        </div>
+
+        <div class="project-panel">
+            <h2>My Development Approach</h2>
+            <p>
+                This project is part of my practical web development experience.
+                The final description, technologies and features should match the
+                actual version I built and hosted.
+            </p>
+        </div>
+
+        <div class="project-panel">
+            <h2>Project Links</h2>
+            <p>
+                The original live website and source repository links can be added
+                here after they have been verified.
+            </p>
+        </div>
+
+        <a class="back-link" href="../../index.html#projects">
+            &larr; Back to Portfolio Projects
+        </a>
+    </section>
+</main>
+
+<footer class="footer">
+    <p>&copy; <span id="year"></span> Kyalo. All rights reserved.</p>
+</footer>
+
+<script src="../../js/script.js"></script>
+<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
