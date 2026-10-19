@@ -1,1 +1,153 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Top Mark Hub — an education technology project by Kyalo.">
+    <title>Top Mark Hub | Kyalo</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <style>
+        .project-hero {
+            padding: 100px 8% 60px;
+            text-align: center;
+        }
+        .project-hero h1 {
+            font-size: clamp(2.4rem, 6vw, 4rem);
+            margin-bottom: 18px;
+        }
+        .project-hero h1 span { color: #4CAF50; }
+        .project-content {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 20px 8% 90px;
+        }
+        .project-panel {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(76,175,80,0.25);
+            border-radius: 16px;
+            padding: 28px;
+            margin: 24px 0;
+        }
+        .project-content h2 {
+            margin-bottom: 14px;
+            color: #4CAF50;
+        }
+        .project-content p, .project-content li {
+            line-height: 1.8;
+        }
+        .project-content ul { padding-left: 24px; }
+        .project-status {
+            display: inline-block;
+            padding: 8px 14px;
+            border: 1px solid #4CAF50;
+            border-radius: 30px;
+            color: #8be29a;
+            margin: 10px 0 22px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #8be29a;
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <a href="../../index.html" class="logo">KYALO<span>.</span></a>
+    <nav class="navbar">
+        <a href="../../index.html">Home</a>
+        <a href="../../index.html#about">About</a>
+        <a href="../../index.html#skills">Skills</a>
+        <a href="../../index.html#projects">Projects</a>
+        <a href="../../index.html#contact">Contact</a>
+    </nav>
+</header>
+
+<main>
+    <section class="project-hero">
+        <h1>Top Mark <span>Hub</span></h1>
+        <p>Building better ways to manage learning, academic results and school performance.</p>
+        <div class="project-status">Project in development</div>
+    </section>
+
+    <section class="project-content">
+        <div class="project-panel">
+            <h2>Project Overview</h2>
+            <p>
+                Top Mark Hub (TMH) is an education technology platform I am developing
+                to support secondary schools, teachers and students. The goal is to
+                bring academic information and learning resources together in one
+                accessible system.
+            </p>
+        </div>
+
+        <div class="project-panel">
+            <h2>The Problem</h2>
+            <p>
+                Managing student marks, preparing report cards and understanding
+                academic performance can require repetitive work across separate
+                records. Schools also need accessible revision materials and useful
+                ways to track student progress.
+            </p>
+        </div>
+
+        <div class="project-panel">
+            <h2>Project Goals</h2>
+            <ul>
+                <li>Organise student, school, class and subject information.</li>
+                <li>Support teachers with entering and managing student marks.</li>
+                <li>Generate structured student report cards.</li>
+                <li>Analyse academic performance and identify learning gaps.</li>
+                <li>Provide a foundation for revision resources and past papers.</li>
+                <li>Explore AI-assisted academic insights as the project develops.</li>
+            </ul>
+        </div>
+
+        <div class="project-panel">
+            <h2>Technology Stack</h2>
+            <ul>
+                <li><strong>Python and Django:</strong> backend application development.</li>
+                <li><strong>PostgreSQL:</strong> relational database management.</li>
+                <li><strong>HTML, CSS and JavaScript:</strong> web interface development.</li>
+                <li><strong>Git and GitHub:</strong> source control and project collaboration.</li>
+            </ul>
+        </div>
+
+        <div class="project-panel">
+            <h2>My Role</h2>
+            <p>
+                I am developing the project while applying my background in
+                Mathematics and Computer Science. My work includes designing
+                application components, modelling academic data, implementing
+                backend functionality and improving the platform iteratively.
+            </p>
+        </div>
+
+        <div class="project-panel">
+            <h2>Current Status</h2>
+            <p>
+                TMH is under development. The features described here represent
+                the project's direction and goals; not every planned feature is
+                necessarily implemented or publicly available yet.
+            </p>
+        </div>
+
+        <a class="back-link" href="../../index.html#projects">
+            &larr; Back to Portfolio Projects
+        </a>
+    </section>
+</main>
+
+<footer class="footer">
+    <p>&copy; <span id="year"></span> Kyalo. All rights reserved.</p>
+</footer>
+
+<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
+
