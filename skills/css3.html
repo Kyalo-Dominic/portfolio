@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn CSS3 styling, layouts, responsive design and animations with practical examples.">
+  <title>CSS3 | Kyalo's Developer Portfolio</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .lesson { max-width: 900px; margin: auto; }
+    .lesson h1 { font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 16px; }
+    .lesson h2 { margin: 42px 0 14px; font-size: 1.7rem; }
+    .lesson p, .lesson li { color: var(--muted); margin-bottom: 12px; }
+    .lesson ul { padding-left: 24px; }
+    .lesson code { color: var(--primary); }
+    .code-example {
+      overflow-x: auto; padding: 22px; margin: 20px 0;
+      border: 1px solid var(--border); border-radius: 12px;
+      background: #060a14; color: #e7edf8;
+      font: 0.92rem/1.8 Consolas, monospace;
+      white-space: pre;
+    }
+    .lesson-nav { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 40px; }
+    .lesson-nav a { color: var(--primary); }
+    .back-link { display: inline-block; margin-bottom: 35px; color: var(--primary); }
+    .lesson-note {
+      padding: 18px; margin-top: 20px;
+      background: var(--surface); border-left: 3px solid var(--primary);
+      border-radius: 6px;
+    }
+    .demo-card {
+      margin: 20px 0; padding: 24px;
+      border: 1px solid var(--primary); border-radius: 12px;
+      background: linear-gradient(135deg, #151e32, #0b1020);
+    }
+    .demo-card h3 { color: var(--primary); margin-bottom: 8px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="../index.html">KYALO<span>.</span></a>
+    <a class="button button-secondary" href="../index.html">Back to Portfolio</a>
+  </header>
+
+  <main class="section lesson">
+    <a class="back-link" href="../index.html#skills">&larr; Back to all skills</a>
+
+    <p class="eyebrow">WEB DESIGN & PRESENTATION</p>
+    <h1>Learn <span>CSS3</span></h1>
+
+    <p>
+      CSS (Cascading Style Sheets) controls how HTML content looks.
+      It defines colors, typography, spacing, layouts, borders,
+      responsive behavior and animations.
+    </p>
+
+    <div class="lesson-note">
+      <strong>Remember:</strong> HTML defines the content, CSS presents
+      it, and JavaScript adds behavior. Your portfolio uses all three.
+    </div>
+
+    <h2>1. Where is CSS used?</h2>
+    <ul>
+      <li>Designing responsive websites for phones and computers.</li>
+      <li>Building navigation bars, cards, forms and dashboards.</li>
+      <li>Creating themes, hover effects and animations.</li>
+      <li>Presenting information clearly in school and business portals.</li>
+    </ul>
+
+    <h2>2. Basic CSS syntax</h2>
+    <p>
+      A CSS rule selects an element and applies one or more declarations.
+      Each declaration has a property and a value.
+    </p>
+
+    <pre class="code-example"><code>h1 {
+  color: #00e68a;
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+
+p {
+  color: #a7b2c7;
+  line-height: 1.7;
+}</code></pre>
+
+    <h2>3. What does a CSS rule do?</h2>
+    <div class="demo-card">
+      <h3>A styled card</h3>
+      <p>This card uses a background, border, padding and rounded corners.</p>
+    </div>
+    <p>
+      The card above demonstrates how CSS properties can make a simple
+      HTML section look like a polished component.
+    </p>
+
+    <h2>4. Responsive design</h2>
+    <p>
+      Responsive CSS adapts a page to different screen sizes. A media
+      query lets you apply different styles when a condition is met.
+    </p>
+
+    <pre class="code-example"><code>.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+@media (max-width: 700px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}</code></pre>
+
+    <p>
+      On wider screens, this example creates three columns. On screens
+      up to 700 pixels wide, it changes to one column.
+    </p>
+
+    <h2>5. Useful CSS concepts</h2>
+    <ul>
+      <li><code>color</code> and <code>background</code>: text and surfaces.</li>
+      <li><code>margin</code> and <code>padding</code>: outside and inside spacing.</li>
+      <li><code>display: flex</code>: arranging items along a flexible axis.</li>
+      <li><code>display: grid</code>: arranging items in rows and columns.</li>
+      <li><code>border-radius</code>: rounding corners.</li>
+      <li><code>:hover</code>: changing styles when a pointer is over an element.</li>
+      <li><code>@media</code>: applying styles based on screen or device conditions.</li>
+      <li><code>transition</code> and <code>@keyframes</code>: visual effects and animations.</li>
+    </ul>
+
+    <h2>6. A practical project</h2>
+    <p>
+      Try creating a responsive project card with a title, description
+      and link. Give it a dark background, a subtle border and a hover
+      effect. Then make the card fit narrow mobile screens.
+    </p>
+
+    <pre class="code-example"><code>.project-card {
+  padding: 24px;
+  border: 1px solid #26334b;
+  border-radius: 12px;
+  background: #151e32;
+  transition: transform 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+}</code></pre>
+
+    <div class="lesson-note">
+      <strong>Connection to TMH:</strong> CSS can help make student
+      dashboards, report cards, teacher forms and school administration
+      pages easier to use on desktop and mobile devices.
+    </div>
+
+    <h2>7. What should you practise?</h2>
+    <ul>
+      <li>Change the colors and spacing of a simple HTML page.</li>
+      <li>Build a card with padding, borders and rounded corners.</li>
+      <li>Create a three-column grid that becomes one column on mobile.</li>
+      <li>Add a subtle hover transition.</li>
+    </ul>
+
+    <nav class="lesson-nav" aria-label="Related skills">
+      <a href="html5.html">&larr; Previous: HTML5</a>
+      <a href="javascript.html">Next: JavaScript &rarr;</a>
+      <a href="python.html">Python</a>
+      <a href="django.html">Django</a>
+      <a href="postgresql.html">PostgreSQL</a>
+    </nav>
+
+    <p style="margin-top: 40px;">
+      <a class="button button-primary" href="../index.html">Back to Portfolio</a>
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Kyalo.</p>
+    <a href="../index.html#skills">All skills</a>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
