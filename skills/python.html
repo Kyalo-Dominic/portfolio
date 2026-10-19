@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn Python programming, data structures, functions, and practical examples.">
+  <title>Python | Kyalo's Developer Portfolio</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .lesson { max-width: 900px; margin: auto; }
+    .lesson h1 { font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 16px; }
+    .lesson h2 { margin: 42px 0 14px; font-size: 1.7rem; }
+    .lesson p, .lesson li { color: var(--muted); margin-bottom: 12px; }
+    .lesson ul { padding-left: 24px; }
+    .lesson code { color: var(--primary); }
+    .code-example {
+      overflow-x: auto; padding: 22px; margin: 20px 0;
+      border: 1px solid var(--border); border-radius: 12px;
+      background: #060a14; color: #e7edf8;
+      font: 0.92rem/1.8 Consolas, monospace;
+      white-space: pre;
+    }
+    .lesson-nav { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 40px; }
+    .lesson-nav a, .back-link { color: var(--primary); }
+    .back-link { display: inline-block; margin-bottom: 35px; }
+    .lesson-note {
+      padding: 18px; margin-top: 20px;
+      background: var(--surface); border-left: 3px solid var(--primary);
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="../index.html">KYALO<span>.</span></a>
+    <a class="button button-secondary" href="../index.html">Back to Portfolio</a>
+  </header>
+
+  <main class="section lesson">
+    <a class="back-link" href="../index.html#skills">&larr; Back to all skills</a>
+
+    <p class="eyebrow">PROGRAMMING & DATA</p>
+    <h1>Learn <span>Python</span></h1>
+
+    <p>
+      Python is a general-purpose programming language known for its
+      readable syntax and broad ecosystem. It is used in web development,
+      automation, data analysis, scientific computing and AI.
+    </p>
+
+    <div class="lesson-note">
+      <strong>Why Python matters to your work:</strong> You can use it
+      for Django applications, data analysis, numerical methods and
+      mathematical modelling.
+    </div>
+
+    <h2>1. Where is Python used?</h2>
+    <ul>
+      <li>Web backends using frameworks such as Django.</li>
+      <li>Data analysis with libraries such as pandas and NumPy.</li>
+      <li>Scientific and numerical computing.</li>
+      <li>Automation scripts and AI/machine-learning projects.</li>
+    </ul>
+
+    <h2>2. Variables and basic data types</h2>
+    <p>
+      Python variables refer to values. Common built-in types include
+      integers, floating-point numbers, strings and Booleans.
+    </p>
+
+    <pre class="code-example"><code>student_name = "Amina"
+maths_mark = 85
+average = 78.5
+passed = True
+
+print(student_name)
+print(maths_mark)</code></pre>
+
+    <h2>3. Conditions and loops</h2>
+    <p>
+      Conditions let a program make decisions. Loops repeat instructions
+      over a sequence or while a condition remains true.
+    </p>
+
+    <pre class="code-example"><code>mark = 72
+
+if mark >= 50:
+    print("Pass")
+else:
+    print("Needs improvement")
+
+for subject in ["Maths", "Physics", "Computer Science"]:
+    print(subject)</code></pre>
+
+    <h2>4. Functions</h2>
+    <p>
+      Functions package logic into reusable units. They can receive
+      arguments and return a result.
+    </p>
+
+    <pre class="code-example"><code>def calculate_average(marks):
+    if not marks:
+        return None
+
+    return sum(marks) / len(marks)
+
+scores = [75, 80, 90]
+print(calculate_average(scores))</code></pre>
+
+    <h2>5. Practical example: analyse student marks</h2>
+    <p>
+      This short program calculates the mean mark and counts how many
+      students achieved at least 50. It is a simple illustration of
+      the kind of analysis an education platform might perform.
+    </p>
+
+    <pre class="code-example"><code>marks = [64, 81, 47, 73, 90, 55]
+
+class_average = sum(marks) / len(marks)
+pass_count = sum(mark >= 50 for mark in marks)
+
+print(f"Class average: {class_average:.1f}")
+print(f"Students scoring 50 or above: {pass_count}")</code></pre>
+
+    <h2>6. Python for mathematics and computing</h2>
+    <ul>
+      <li><strong>NumPy:</strong> arrays, matrix operations and numerical calculations.</li>
+      <li><strong>pandas:</strong> tabular data, cleaning and statistical summaries.</li>
+      <li><strong>Matplotlib:</strong> plots and data visualizations.</li>
+      <li><strong>SciPy:</strong> scientific algorithms, optimization and numerical methods.</li>
+    </ul>
+
+    <pre class="code-example"><code># Example using NumPy (install numpy first)
+import numpy as np
+
+matrix = np.array([
+    [1, 2],
+    [3, 4]
+])
+
+print(matrix @ matrix)</code></pre>
+
+    <div class="lesson-note">
+      <strong>Connection to TMH:</strong> Python and Django can power
+      TMH's backend. Python's data libraries can later help analyse
+      performance trends—while the platform must still protect student
+      records and enforce access permissions.
+    </div>
+
+    <h2>7. What should you practise?</h2>
+    <ul>
+      <li>Write a function that converts Celsius to Fahrenheit.</li>
+      <li>Find the largest value in a list of numbers.</li>
+      <li>Calculate the mean, minimum and maximum of a marks list.</li>
+      <li>Use NumPy to create and multiply two matrices.</li>
+    </ul>
+
+    <nav class="lesson-nav" aria-label="Related skills">
+      <a href="javascript.html">&larr; Previous: JavaScript</a>
+      <a href="django.html">Next: Django &rarr;</a>
+      <a href="html5.html">HTML5</a>
+      <a href="css3.html">CSS3</a>
+      <a href="postgresql.html">PostgreSQL</a>
+    </nav>
+
+    <p style="margin-top: 40px;">
+      <a class="button button-primary" href="../index.html">Back to Portfolio</a>
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Kyalo.</p>
+    <a href="../index.html#skills">All skills</a>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
