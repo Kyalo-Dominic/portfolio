@@ -54,16 +54,35 @@
 </head>
 <body>
 
-<header class="header">
+
+<header class="site-header">
     <a href="../../index.html" class="logo">KYALO<span>.</span></a>
-    <nav class="navbar">
-        <a href="../../index.html">Home</a>
+
+    <nav class="desktop-nav">
         <a href="../../index.html#about">About</a>
         <a href="../../index.html#skills">Skills</a>
         <a href="../../index.html#projects">Projects</a>
         <a href="../../index.html#contact">Contact</a>
     </nav>
+
+    <button class="menu-toggle" id="menu-toggle"
+            aria-label="Open navigation menu" aria-expanded="false">
+        ☰
+    </button>
 </header>
+
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+<aside class="sidebar" id="sidebar">
+    <button class="sidebar-close" id="sidebar-close"
+            aria-label="Close navigation menu">×</button>
+    <a href="../../index.html">Home</a>
+    <a href="../../index.html#about">About</a>
+    <a href="../../index.html#skills">Skills</a>
+    <a href="../../index.html#projects">Projects</a>
+    <a href="../../index.html#contact">Contact</a>
+</aside>
+
 
 <main>
     <section class="project-hero">
