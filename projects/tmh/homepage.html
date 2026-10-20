@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top Mark Hub - Online Learning Platform</title>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* Color Palette */
+    :root {
+      --primary-green: #4CAF50;
+      --accent-blue: #1976D2;
+      --light-blue: #E3F2FD;
+      --light-bg: #F5F6FA;
+      --white: #FFFFFF;
+      --highlight: #CCFF66;
+      --text-dark: #2c3e50;
+    }
+
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
+    body { background-color: var(--light-bg); color: var(--text-dark); line-height: 1.6; }
+
+    .container { width: 90%; max-width: 1200px; margin: 0 auto; }
+
+    /* Header */
+    header {
+      background-color: var(--primary-green);
+      color: var(--white);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0; z-index: 100;
+    }
+    .header-content { display: flex; justify-content: space-between; align-items: center; height: 4rem }
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo i { font-size: 1.8rem; color: var(--highlight); }
+    .logo h1 { font-size: 1.5rem; font-weight: bold; }
+
+    nav ul { display: flex; list-style: none; }
+    nav ul li { margin-left: 1.5rem; }
+    nav ul li a {
+      color: var(--white); text-decoration: none; font-weight: 500; transition: 0.3s;
+    }
+    nav ul li a:hover { color: var(--highlight); }
+    .mobile-menu { display: none; font-size: 1.5rem; cursor: pointer; }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--primary-green), var(--accent-blue));
+      color: var(--white); text-align: center; padding: 4rem 0;
+    }
+    .hero h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 2rem; }
+    .btn {
+      background-color: var(--highlight); color: var(--text-dark);
+      padding: 0.8rem 1.5rem; border-radius: 5px; font-weight: bold;
+      text-decoration: none; transition: 0.3s;
+    }
+    .btn:hover { background-color: var(--light-blue); transform: translateY(-3px); }
+
+    /* Features */
+    .features { padding: 4rem 0; }
+    .section-title { text-align: center; margin-bottom: 3rem; }
+    .section-title h2 { font-size: 2rem; color: var(--text-dark); }
+    .features-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;
+    }
+    .feature-card {
+      background: var(--white); border-radius: 8px; padding: 2rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: center;
+      transition: transform 0.3s;
+    }
+    .feature-card:hover { transform: translateY(-10px); }
+    .feature-icon { font-size: 2.5rem; color: var(--accent-blue); margin-bottom: 1rem; }
+    .feature-card h3 { margin-bottom: 1rem; color: var(--text-dark); }
+
+    /* Contact */
+    .contact { background-color: var(--light-blue); padding: 4rem 0; }
+    .contact-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+    .contact-item { display: flex; align-items: flex-start; gap: 1rem; }
+    .contact-icon { font-size: 1.5rem; color: var(--accent-blue); }
+    .contact-details h3 { color: var(--text-dark); margin-bottom: .3rem; }
+     .contact-form {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        .contact-form .btn{
+            background-color: var(--accent-blue);
+            color: #E3F2FD;
+        }
+        .contact-form .btn:hover{
+            background-color:skyblue;
+            cursor:pointer;
+        }
+
+    /* Footer */
+    footer {
+      background-color: var(--primary-green); color: var(--white);
+      text-align: center; padding: 2rem 0;
+    }
+    .footer-content { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+    .social-links { display: flex; gap: 1rem; }
+    .social-link {
+      display: flex; align-items: center; justify-content: center;
+      width: 40px; height: 40px; border-radius: 50%;
+      background-color: rgba(255,255,255,0.2); color: white; font-size: 1.2rem;
+      transition: 0.3s;
+    }
+    .social-link:hover { background-color: var(--accent-blue); transform: translateY(-3px); }
+    .copyright { font-size: 0.9rem; margin-top: 1rem; }
+
+    /* Responsive */
+    @media(max-width:768px){
+      .mobile-menu{display:block;}
+      nav ul{display:none; position:absolute; top:100%; left:0; width:100%; background:var(--primary-green); flex-direction:column;}
+      nav ul.show{display:flex;}
+      nav ul li{text-align:center; margin:1rem 0;}
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container header-content">
+      <div class="mobile-menu"><i class="fas fa-bars"></i></div>
+      <div class="logo">
+        <i class="fas fa-graduation-cap"></i>
+        <h1>Top Mark Hub</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="index.html"><i class="fas fa-book-open"></i> Courses</a></li>
+          <li><a href="index.html"><i class="fas fa-file-alt"></i> Resources</a></li>
+          <li><a href="index.html"><i class="fas fa-users"></i> About</a></li>
+          <li><a href="index.html"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="container">
+      <h2>Empowering High School Students and Teachers</h2>
+      <p>Learn smarter, teach better, and achieve excellence with Top Mark Hub — your trusted partner in education.</p>
+      <a href="home.html" class="btn">Explore Courses</a>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features" id="courses">
+    <div class="container">
+      <div class="section-title"><h2>Why Choose Top Mark Hub?</h2></div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+          <h3>Expert Instructors</h3>
+          <p>Learn from experienced teachers and subject experts committed to excellence.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-book"></i></div>
+          <h3>Curriculum-Aligned</h3>
+          <p>Content designed to match Kenya’s high school syllabus for accuracy and relevance.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-laptop"></i></div>
+          <h3>Flexible Learning</h3>
+          <p>Access learning materials anywhere, anytime, on any device.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+          <h3>Progress Tracking</h3>
+          <p>Track performance with smart analytics to help students improve.</p>
+        </div>
+         <div class="feature-card">
+         <div class="feature-icon">🔄</div>
+        <h3>Interactive Content</h3>
+        <p>Engage with multimedia lessons, quizzes, and interactive exercises for better retention.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🤝</div>
+            <h3>Teacher Resources</h3>
+            <p>Access a wealth of teaching materials, lesson plans, and classroom management tools.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-title"><h2>Contact Us</h2></div>
+      <div class="contact-content">
+        <div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+            <div class="contact-details"><h3>Phone</h3><p><strong> <a href="tel:+254793886415">+254 793 886 415</a></strong></p></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <div class="contact-details"><h3>Email</h3><p>info@topmarkhub.com</p></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-user-graduate"></i></div>
+            <div class="contact-details"><h3>Founder</h3><p>Dr. Kyalo Ph.D</p></div>
+          </div>
+        </div>
+        <div class="contact-form">
+                    <h3>Send us a Message</h3>
+                    <form action="contact_handler.php" method="POST"id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" class="form-control" placeholder="Type your subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" class="form-control" placeholder="Type your message here!" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <div class="logo"><i class="fas fa-graduation-cap"></i><h1>Top Mark Hub</h1></div>
+      <p>High School Online Learning Platform</p>
+      <div class="social-links">
+        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>|        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 Top Mark Hub | Made by Dr. KyalloH Ph.D. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile Menu
+    document.querySelector('.mobile-menu').addEventListener('click', () => {
+      document.querySelector('nav ul').classList.toggle('show');
+    });
+  </script>
+</body>
+</html>
