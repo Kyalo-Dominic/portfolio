@@ -169,7 +169,7 @@ span {
 }
 
 /* Center the hero action buttons */
-.hero-actions {
+.hero-buttons {
     display: flex;
     justify-content: center;
     align-items: center;
