@@ -166,7 +166,6 @@ span {
   flex-wrap: wrap;
   gap: 14px;
   margin-top: 32px;
-   align-items: center;
 }
 
 .button {
@@ -191,8 +190,6 @@ span {
 .button-primary {
   background: var(--primary);
   color: #06150e;
-   display: flex;
-   align-items: center;
 }
 
 .button-primary:hover {
@@ -203,8 +200,6 @@ span {
   border-color: rgba(255, 255, 255, 0.28);
   background: rgba(255, 255, 255, 0.04);
   color: var(--text);
-   display: flex;
-   align-items: center;
 }
 
 .button-secondary:hover {
