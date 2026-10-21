@@ -166,6 +166,7 @@ span {
   flex-wrap: wrap;
   gap: 14px;
   margin-top: 32px;
+   align-items: center;
 }
 
 .button {
